@@ -1,0 +1,26 @@
+<div class="row align-items-center text-center" style="height: 80vh;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3>Create an Account</h3>
+            <hr />
+            <% if flash.has?(:message) %>
+                <div class="alert alert-<%= flash[:alert_type] %> text-center"><%= flash[:message] %></div>
+            <% end %>
+            <form action="/signup" method="POST">
+                <input type="text" id="username" name="username" placeholder="Username" class="form-control" /><br />
+                <input type="email" id="email" name="email" placeholder="Email" class="form-control" /><br />
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control" /><br />
+                
+                <!--
+                <div class="input-group">
+                    <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control input-group-prepend" />
+                    <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" class="form-control input-group-append" />
+                </div><br />
+                -->
+
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            <hr />
+            <a href="/">Login</a>
+    </div>
+</div>

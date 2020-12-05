@@ -1,0 +1,21 @@
+<div class="row align-items-center text-center" style="height: 80vh;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form action="/login" method="POST">
+            <h2>Fwitter Sign In</h2>
+            <% if flash.has?(:message) %>
+                <div class="alert alert-<%= flash[:alert_type] %> text-center"><%= flash[:message] %></div>
+            <% end %>
+            <input type="text" id="username" name="username" placeholder="Username" class="form-control" /><br />
+            <input type="email" id="email" name="email" placeholder="Email Address" class="form-control" /><br />
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control" />
+                <div class="input-group-append">
+                    <button type="submit" id="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+        <hr />
+        <a href="/signup">Sign Up</a>
+    </div>
+</div>

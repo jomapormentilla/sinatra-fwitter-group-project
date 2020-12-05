@@ -1,0 +1,12 @@
+<a href="/">Home</a>
+<h1><%= @user.username.upcase %></h1>
+
+<h3>Tweets</h3>
+<ul>
+    <% @user.tweets.each do |tweet| %>
+        <li><a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a></li>
+    <% end %>
+</ul>
+
+<hr />
+<a href="/tweets/new">New Tweet</a>

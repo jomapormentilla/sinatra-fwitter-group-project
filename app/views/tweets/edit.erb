@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Edit Tweet</h1>
+    <% if flash.has?(:message) %>
+      <div class="alert alert-<%= flash[:alert_type] %>"><%= flash[:message] %></div>
+    <% end %>
+    <form action='/tweets/<%= @tweet.id %>' method="POST">
+      <input type="hidden" name="_method" value="PATCH" />
+      <textarea type="text" id="content" name="content" placeholder="Tweet Content Here..." class="form-control"><%= @tweet.content %></textarea><br />
+      <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block">
+    </form>
+  </div>
+</div>
